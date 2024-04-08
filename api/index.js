@@ -10,7 +10,7 @@ dotenv.config();
 mongoose.connect(
   process.env.MONGO
 )
-.then(() => { console.log('Mongodb is connected');})
+.then(() => { console.log('Mongodb is connected')})
 .catch((err) => {
   console.log(err);
 })
@@ -19,7 +19,7 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser());
 
-app.listen(process.env.PORT || 8000, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Server is running on port 3000!`);
 })
 

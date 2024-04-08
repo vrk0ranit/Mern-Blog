@@ -1,4 +1,4 @@
-import { Alert, Button, Modal, ModalBody, TextInput } from 'flowbite-react';
+import { Alert, Button, Modal, TextInput } from 'flowbite-react';
 import { useEffect, useRef, useState } from 'react';
 import { useSelector } from 'react-redux';
 import {
@@ -254,12 +254,23 @@ export default function DashProfile() {
         )}
       </form>
       <div className='text-red-500 flex justify-between mt-5'>
-        <span onClick={() => setShowModal(true)} className='cursor-pointer'>
+    
+          <span onClick={() => setShowModal(true)} className='cursor-pointer'>
           Delete Account
         </span>
-        <span onClick={handleSignout} className='cursor-pointer'>
-          Sign Out
-        </span>
+        
+       {
+        signoutSuccess && (
+          <Link to={'/'}>
+             <span onClick={handleSignout} className='cursor-pointer'>
+               Sign Out
+             </span>
+          </Link>
+        )
+       }
+       
+        
+        
       </div>
       {updateUserSuccess && (
         <Alert color='success' className='mt-5'>
@@ -290,9 +301,11 @@ export default function DashProfile() {
               Are you sure you want to delete your account?
             </h3>
             <div className='flex justify-center gap-4'>
+              <Link to={'/'}>
               <Button color='failure' onClick={handleDeleteUser}>
                 Yes, I'm sure
               </Button>
+              </Link>
               <Button color='gray' onClick={() => setShowModal(false)}>
                 No, cancel
               </Button>

@@ -259,15 +259,12 @@ export default function DashProfile() {
           Delete Account
         </span>
         
-       {
-        signoutSuccess && (
-          <Link to={'/'}>
+       
              <span onClick={handleSignout} className='cursor-pointer'>
                Sign Out
              </span>
-          </Link>
-        )
-       }
+          
+        
        
         
         
@@ -301,11 +298,11 @@ export default function DashProfile() {
               Are you sure you want to delete your account?
             </h3>
             <div className='flex justify-center gap-4'>
-              <Link to={'/'}>
+              
               <Button color='failure' onClick={handleDeleteUser}>
                 Yes, I'm sure
               </Button>
-              </Link>
+              
               <Button color='gray' onClick={() => setShowModal(false)}>
                 No, cancel
               </Button>

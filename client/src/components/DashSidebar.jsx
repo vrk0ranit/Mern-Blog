@@ -41,11 +41,11 @@ export default function DashSidebar() {
                             Profile
                         </Sidebar.Item>
                     </Link>
-                    <Link to={'/'}>
+                    
                     <Sidebar.Item onClick={handleSignout} icon={HiArrowSmRight} className='cursor-pointer'>
                         Sign Out
                     </Sidebar.Item>
-                    </Link>
+                    
                 </Sidebar.ItemGroup>
             </Sidebar.Items>
         </Sidebar>
